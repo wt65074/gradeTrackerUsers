@@ -13,7 +13,7 @@ module UserDataAPI
         version 'v1', using: :param, parameter: "v"
         format :json
 
-        con = Mysql.new('127.0.0.1', 'root', '', 'UserData')
+        con = Mysql.new('127.0.0.1', 'root', 'open', 'UserLogs')
 
         encoding_options = {
           :invalid           => :replace,  # Replace invalid byte sequences
