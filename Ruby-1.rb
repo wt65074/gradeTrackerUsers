@@ -35,7 +35,7 @@ module UserDataAPI
           post do
             
             puts "INSERT INTO weekly (date) VALUES ('#{params[:date]}')"
-            queryResponse = con.query("INSERT INTO weekly (date) VALUES ('#{params[:date]}')"")
+            queryResponse = con.query("INSERT INTO weekly (date) VALUES ('#{params[:date]}')")
             
           end
         end
