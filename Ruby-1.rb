@@ -25,8 +25,8 @@ module UserDataAPI
         resource :weekly do
           post do
             
-            puts "INSERT INTO weekly (date) VALUES ('#{params[:date]}')"
-            queryResponse = con.query("INSERT INTO weekly (date) VALUES ('#{params[:date]}')")
+            puts "INSERT INTO Weekly (date) VALUES ('#{params[:date]}')"
+            queryResponse = con.query("INSERT INTO Weekly (date) VALUES ('#{params[:date]}')")
             
           end
         end
@@ -34,8 +34,8 @@ module UserDataAPI
         resource :daily do
           post do
             
-            puts "INSERT INTO weekly (date) VALUES ('#{params[:date]}')"
-            queryResponse = con.query("INSERT INTO weekly (date) VALUES ('#{params[:date]}')")
+            puts "INSERT INTO Weekly (date) VALUES ('#{params[:date]}')"
+            queryResponse = con.query("INSERT INTO Weekly (date) VALUES ('#{params[:date]}')")
             
           end
         end
