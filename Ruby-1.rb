@@ -22,7 +22,7 @@ module UserDataAPI
           :universal_newline => true       # Always break lines with \n
         }
 
-        resource :weekly do
+        resource :daily do
           post do
             
             puts "INSERT INTO Daily (date) VALUES ('#{params[:date]}')"
@@ -31,7 +31,7 @@ module UserDataAPI
           end
         end
 
-        resource :daily do
+        resource :weekly do
           post do
             
             puts "INSERT INTO Weekly (date) VALUES ('#{params[:date]}')"
