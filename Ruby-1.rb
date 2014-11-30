@@ -13,7 +13,7 @@ module UserDataAPI
         version 'v1', using: :param, parameter: "v"
         format :json
 
-        con = Mysql.new('127.0.0.1', 'root', 'open', 'UserLogs')
+       
 
         encoding_options = {
           :invalid           => :replace,  # Replace invalid byte sequences
@@ -24,9 +24,25 @@ module UserDataAPI
 
         resource :daily do
           post do
+              
+            hash = {}
+              
+            begin
+                con = Mysql.new('127.0.0.1', 'root', 'open', 'UserLogs')
+            rescue
+             
+                hash[:fail] = "mySQL fails"
+             
+            ensure
             
-            puts "INSERT INTO Daily (date) VALUES ('#{params[:date]}')"
-            queryResponse = con.query("INSERT INTO Daily (date) VALUES ('#{params[:date]}')")
+                puts "INSERT INTO Daily (date) VALUES ('#{params[:date]}')"
+                queryResponse = con.query("INSERT INTO Daily (date) VALUES ('#{params[:date]}')")
+                
+                hash[:success] = "Sucess"
+             
+            end
+            
+            hash
             
           end
         end
@@ -34,9 +50,26 @@ module UserDataAPI
         resource :weekly do
           post do
             
-            puts "INSERT INTO Weekly (date) VALUES ('#{params[:date]}')"
-            queryResponse = con.query("INSERT INTO Weekly (date) VALUES ('#{params[:date]}')")
+            hash = {}
+              
+            begin
+                con = Mysql.new('127.0.0.1', 'root', 'open', 'UserLogs')
+            rescue
+             
+                hash[:fail] = "mySQL fails"
+             
+            ensure
             
+                
+                puts "INSERT INTO Weekly (date) VALUES ('#{params[:date]}')"
+                queryResponse = con.query("INSERT INTO Weekly (date) VALUES ('#{params[:date]}')")
+            
+                hash[:success] = "Sucess"
+             
+            end
+            
+            hash
+
           end
         end
 
