@@ -36,7 +36,7 @@ module UserDataAPI
             ensure
             
                 puts "INSERT INTO Daily (date) VALUES ('#{params[:date]}')"
-                queryResponse = con.query("INSERT INTO Daily (date, dateposted) VALUES ('#{params[:date]}', now()")
+                queryResponse = con.query("INSERT INTO Daily (date, dateposted) VALUES ('#{params[:date]}', now())")
                 
                 hash[:success] = "Sucess"
              
@@ -62,7 +62,7 @@ module UserDataAPI
             
                 
                 puts "INSERT INTO Weekly (date) VALUES ('#{params[:date]}')"
-                queryResponse = con.query("INSERT INTO Weekly (date, dateposted) VALUES ('#{params[:date]}', now()")
+                queryResponse = con.query("INSERT INTO Weekly (date, dateposted) VALUES ('#{params[:date]}', now())")
             
                 hash[:success] = "Sucess"
              
