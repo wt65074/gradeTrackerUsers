@@ -44,6 +44,9 @@ module UserDataAPI
                     hash[:weekly] = queryResponse
                     
                     hash
+                end
+            end
+        end
 
         resource :daily do
           post do
