@@ -43,9 +43,10 @@ module UserDataAPI
                     dailyArray = []
                     
                     queryResponse.each do |row|
-                        puts "in"
                         dailyArray.push(row)
                     end
+                    
+                    puts dailyArray
                     
                     hash[:daily] = dailyArray
                     
