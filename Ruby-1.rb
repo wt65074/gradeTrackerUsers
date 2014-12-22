@@ -61,9 +61,10 @@ module UserDataAPI
                     hash[:weekly] = weeklyArray
                     
                     puts hash
-                    
-                    hash
                 end
+                
+                hash
+                
             end
         end
 
