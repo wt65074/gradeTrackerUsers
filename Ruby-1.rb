@@ -41,6 +41,7 @@ module UserDataAPI
                     
                     queryResponse.each do |row|
                         dailyArray.push(row)
+                    end
                     
                     hash[:daily] = dailyArray
                     
@@ -50,6 +51,7 @@ module UserDataAPI
                     
                     queryResponse.each do |row|
                         weeklyArray.push(row)
+                    end
                     
                     hash[:weekly] = weeklyArray
                     
