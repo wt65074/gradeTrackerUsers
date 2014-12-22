@@ -37,11 +37,21 @@ module UserDataAPI
                 ensure
                     queryResponse = con.query("SELECT * FROM Daily")
                     
-                    hash[:daily] = queryResponse
+                    dailyArray - []
+                    
+                    queryResponse.each do |row|
+                        dailyArray.push(row)
+                    
+                    hash[:daily] = dailyArray
+                    
+                    weeklyArray = []
                     
                     queryResponse = con.query("SELECT * FROM Weekly")
                     
-                    hash[:weekly] = queryResponse
+                    queryResponse.each do |row|
+                        weeklyArray.push(row)
+                    
+                    hash[:weekly] = weeklyArray
                     
                     hash
                 end
