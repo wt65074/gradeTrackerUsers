@@ -35,11 +35,11 @@ module UserDataAPI
                     hash[:fail] = "mySQL fails"
                     
                 ensure
-                    queryResponse = con.query("SELECT * IN Daily")
+                    queryResponse = con.query("SELECT * FROM Daily")
                     
                     hash[:daily] = queryResponse
                     
-                    queryResponse = con.query("SELECT * IN Weekly")
+                    queryResponse = con.query("SELECT * FROM Weekly")
                     
                     hash[:weekly] = queryResponse
                     
