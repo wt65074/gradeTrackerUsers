@@ -21,6 +21,29 @@ module UserDataAPI
           :replace           => '',        # Use a blank for those replacements
           :universal_newline => true       # Always break lines with \n
         }
+        
+        resource :data do 
+            
+            get do 
+                
+                hash = {}
+                
+                begin
+                    con = Mysql.new('127.0.0.1', 'root', 'open', 'UserLogs')
+                    
+                rescue
+                    hash[:fail] = "mySQL fails"
+                    
+                ensure
+                    queryResponse = con.query("SELECT * IN Daily")
+                    
+                    hash[:daily] = queryResponse
+                    
+                    queryResponse = con.query("SELECT * IN Weekly")
+                    
+                    hash[:weekly] = queryResponse
+                    
+                    hash
 
         resource :daily do
           post do
