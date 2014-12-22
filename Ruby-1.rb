@@ -37,7 +37,7 @@ module UserDataAPI
                 ensure
                     queryResponse = con.query("SELECT * FROM Daily")
                     
-                    dailyArray - []
+                    dailyArray = []
                     
                     queryResponse.each do |row|
                         dailyArray.push(row)
