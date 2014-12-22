@@ -35,6 +35,9 @@ module UserDataAPI
                     hash[:fail] = "mySQL fails"
                     
                 ensure
+                    
+                    puts "connection succeded"
+                    
                     queryResponse = con.query("SELECT * FROM Daily")
                     
                     dailyArray = []
