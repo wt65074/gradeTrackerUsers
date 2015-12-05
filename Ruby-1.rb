@@ -80,9 +80,11 @@ module UserDataAPI
                 hash[:fail] = "mySQL fails"
              
             ensure
-            
+                
+                
+                
                 puts "INSERT INTO Daily (date) VALUES ('#{params[:date]}')"
-                queryResponse = con.query("INSERT INTO Daily (date, dateposted) VALUES ('#{params[:date]}', now())")
+                queryResponse = con.query("INSERT INTO Daily (date, dateposted) VALUES (now().to_date, now())")
                 
                 hash[:success] = "Sucess"
              
