@@ -5,6 +5,7 @@ require 'json'
 require 'rubygems'
 require 'open-uri'
 require 'net/http'
+require 'date'
 
 
 module UserDataAPI
@@ -84,7 +85,7 @@ module UserDataAPI
                 
                 
                 puts "INSERT INTO Daily (date) VALUES ('#{params[:date]}')"
-                queryResponse = con.query("INSERT INTO Daily (date, dateposted) VALUES (now().to_date, now())")
+                queryResponse = con.query("INSERT INTO Daily (date, dateposted) VALUES (DateTime.now.to_date, now())")
                 
                 hash[:success] = "Sucess"
              
