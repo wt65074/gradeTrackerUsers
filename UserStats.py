@@ -24,7 +24,11 @@ for row in data:
     query = "INSERT INTO DailyCount (date, count) VALUES (%s, %s)" % [row[0], row[1]]
     statsCursor.execute(query)
 
+logsCursor.close()
+statsCursor.close()
 
+statsConnector.close()
+logsConnector.close()
 
 
 
@@ -34,3 +38,4 @@ for row in data:
 #all time average
 #median number
 #number for every day of the year
+#done
