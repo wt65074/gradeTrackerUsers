@@ -31,6 +31,26 @@ for row in data:
     print query
     statsCursor.execute(query)
 
+query = """SELECT date, count(*) as 'Count' FROM Weekly GROUP BY date"""
+logsCursor.execute(query)
+
+#store query results
+data = logsCursor.fetchall()
+
+statsCursor.execute("""DROP TABLE WeeklyCount""")
+statsCursor.execute("""CREATE TABLE `WeeklyCount` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `date` date DEFAULT NULL,
+  `count` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;""")
+
+for row in data:
+
+    query = """INSERT INTO WeeklyCount (date, count) VALUES ('%s', %s)""" % (row[0], row[1])
+    print query
+    statsCursor.execute(query)
+
 logsConnector.commit()
 statsConnector.commit()
 
