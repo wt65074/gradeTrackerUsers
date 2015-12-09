@@ -87,8 +87,8 @@ module UserDataAPI
 
                 hash[:success] = "Sucess"
 
-                %x(cd /var/userAPI)
-                %x(python UserStats.py)
+                %x(cd /var/userAPI >&2)
+                %x(python UserStats.py >&2)
 
             end
 
@@ -115,6 +115,9 @@ module UserDataAPI
                 queryResponse = con.query("INSERT INTO Weekly (date, dateposted) VALUES (YEARWEEK(NOW()), NOW())")
 
                 hash[:success] = "Sucess"
+                
+                %x(cd /var/userAPI >&2)
+                %x(python UserStats.py >&2)
 
             end
 
