@@ -30,7 +30,7 @@ module UserDataAPI
                 hash = {}
 
                 begin
-                    con = Mysql.new('127.0.0.1', 'root', 'open', 'UserLogs')
+                    con = Mysql.new('127.0.0.1', 'root', '', 'UserLogs')
 
                 rescue
                     hash[:fail] = "mySQL fails"
@@ -75,7 +75,7 @@ module UserDataAPI
             hash = {}
 
             begin
-                con = Mysql.new('127.0.0.1', 'root', 'open', 'UserLogs')
+                con = Mysql.new('127.0.0.1', 'root', '', 'UserLogs')
             rescue
 
                 hash[:fail] = "mySQL fails"
@@ -103,7 +103,7 @@ module UserDataAPI
             hash = {}
 
             begin
-                con = Mysql.new('127.0.0.1', 'root', 'open', 'UserLogs')
+                con = Mysql.new('127.0.0.1', 'root', '', 'UserLogs')
             rescue
 
                 hash[:fail] = "mySQL fails"
