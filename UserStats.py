@@ -4,11 +4,11 @@ import time
 
 
 statsConnector = MySQLdb.connect(host="127.0.0.1",user="root",
-            passwd="open",db="Stats")
+            passwd="",db="Stats")
 statsCursor = statsConnector.cursor()
 
 logsConnector = MySQLdb.connect(host="127.0.0.1",user="root",
-            passwd="open",db="UserLogs")
+            passwd="",db="UserLogs")
 logsCursor = logsConnector.cursor()
 
 query = """SELECT date, count(*) as 'Count' FROM Daily GROUP BY date"""
